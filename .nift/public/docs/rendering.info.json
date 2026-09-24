@@ -26,6 +26,7 @@
     "public/assets/site.js",
     "public/assets/style.css",
     "public/benchmarks.html",
+    "public/docs/accessibility.html",
     "public/docs/api.html",
     "public/docs/architecture.html",
     "public/docs/components.html",

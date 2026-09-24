@@ -1,0 +1,12 @@
+<section class="doc-hero"><p class="kicker">Accessibility</p><h1>Keep the platform's<br><em>native semantics.</em></h1><p>Rivet renders ordinary DOM and deliberately leaves keyboard behaviour, semantics, focus, validation, labels and platform controls in the browser's hands.</p></section>
+<section class="docs-flow">
+<article><h2>Semantic HTML first</h2><p>Use the same semantic elements you would without Rivet. Buttons remain buttons, links remain links, labels remain labels, and ARIA remains ordinary markup.</p><pre><code>html`
+  &lt;label for="name"&gt;Name&lt;/label&gt;
+  &lt;input id="name" name="name" required&gt;
+  &lt;button type="submit"&gt;Save&lt;/button&gt;
+`;</code></pre></article>
+<article><h2>Focus and keyboard behaviour</h2><p>Rivet does not invent keyboard behaviour for native controls and does not move focus just because reactive output changed. When application logic needs focus, use a normal DOM ref and <code>element.focus()</code>.</p></article>
+<article><h2>Forms and validation</h2><p>Native events, <code>FormData</code>, browser validation, labels and <code>requestSubmit()</code> continue to work. Hypermedia forms should retain meaningful <code>action</code>/<code>method</code> fallbacks so the underlying HTML remains useful without JavaScript.</p></article>
+<article><h2>Platform controls</h2><p>Use native APIs such as <code>&lt;dialog&gt;</code> and <code>showModal()</code> directly. Rivet does not add wrapper abstractions around browser controls.</p></article>
+<article><h2>Application responsibility</h2><p>Rivet cannot make inaccessible markup accessible. Applications still own semantic structure, accessible names, contrast, focus strategy for custom widgets, async announcements where needed, and assistive-technology testing.</p></article>
+</section>

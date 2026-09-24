@@ -64,6 +64,11 @@
       "name": "404",
       "title": "Rivet",
       "template": "templates/error.html"
+    },
+    {
+      "name": "docs/accessibility",
+      "title": "accessibility",
+      "template": "templates/template.html"
     }
   ]
 }
