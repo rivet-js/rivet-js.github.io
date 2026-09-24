@@ -6,3 +6,9 @@ const fragment = render(view);</code></pre><p>Text interpolation is escaped by t
 html`&lt;input .value=${name}&gt;`</code></pre><p>Normal names bind attributes. A leading dot explicitly binds a native DOM property.</p></article>
 <article><h2>Events</h2><pre><code>html`&lt;button onclick=${save}&gt;Save&lt;/button&gt;`</code></pre><p>Event handlers are native functions attached with <code>addEventListener</code>.</p></article>
 </section>
+<section class="docs-flow">
+<article><h2>Nodes and nested templates</h2><pre><code>const icon = document.createElement("span");
+const child = html`&lt;strong&gt;Rivet&lt;/strong&gt;`;
+
+html`&lt;p&gt;${icon} ${child}&lt;/p&gt;`</code></pre><p>Native DOM nodes and Rivet template results can be interpolated directly. A reactive cell or expression may replace that DOM region without rerendering the surrounding template.</p></article>
+</section>
