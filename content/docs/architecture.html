@@ -14,3 +14,4 @@ node.textContent = "plain DOM";
 
 mount("#widget", html`&lt;p&gt;Rivet + ${node}&lt;/p&gt;`);
 node.addEventListener("click", handleClick);</code></pre><p>Rivet deliberately does not wrap DOM nodes, events, fetch, forms, or platform APIs. A mounted widget owns the target you give it, not the surrounding document.</p></article></section>
+<section class="docs-flow"><article><h2>Hypermedia is being earned, not assumed</h2><p>The CP46 use-case audit found a narrow area where declarative behaviour is genuinely clearer: server-rendered fragment requests followed by an explicit DOM target/swap. More ambitious concerns such as confirmation DSLs, polling, and history/navigation remain deferred until real applications justify them.</p></article></section>
