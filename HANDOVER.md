@@ -325,3 +325,18 @@ Then read feature documentation only when the task requires it, for example:
 - integration with other application stacks.
 
 Prefer documented Nift behaviour and the existing project structure over guessing based on another website generator or framework.
+
+## Rivet documentation maintenance contract
+
+From CP24 onward, treat public behaviour, regression coverage, executable examples, and the website as one synchronized product surface.
+
+For every checkpoint that adds or changes a public Rivet API or observable behaviour:
+
+1. update the implementation and direct tests;
+2. add or update black-box coverage in `../rivet-regression-suite` when practical;
+3. update the relevant website page/API reference in this repository in the same checkpoint batch;
+4. update executable examples when they demonstrate the changed behaviour;
+5. run `npm run docs:check`, then build with Nift and confirm `nift status` is clean;
+6. keep status/version language factual and do not present planned APIs as implemented.
+
+Documentation-only checkpoints should not invent API commitments. If a feature has not landed in `rivet`, describe it only as planned/status material rather than executable public API.
