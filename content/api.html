@@ -1,0 +1,10 @@
+<section class="doc-hero"><p class="kicker">API reference</p><h1>The public surface,<br><em>kept intentionally small.</em></h1><p>This reference lists APIs implemented in Rivet today. Planned APIs are not presented as available.</p></section>
+<section class="docs-flow">
+<article><h2><code>state(initial)</code></h2><p>Creates a mutable reactive cell. Read and write through <code>.value</code>.</p><pre><code>const count = state(0);
+count.value++;</code></pre></article>
+<article><h2><code>computed(fn)</code></h2><p>Creates a lazy cached reactive cell derived from other reactive reads.</p><pre><code>const doubled = computed(() =&gt; count.value * 2);</code></pre></article>
+<article><h2><code>effect(fn)</code></h2><p>Runs immediately, tracks reactive reads, reruns synchronously when dependencies change, and returns a disposer.</p><pre><code>const stop = effect(() =&gt; console.log(count.value));
+stop();</code></pre></article>
+<article><h2><code>html`...`</code></h2><p>Creates a Rivet template result using valid JavaScript tagged-template syntax.</p></article>
+<article><h2><code>render(template)</code></h2><p>Turns a Rivet template result into a native <code>DocumentFragment</code>.</p></article>
+</section>

@@ -1,0 +1,11 @@
+<section class="doc-hero"><p class="kicker">AI-DX & architecture</p><h1>Boring internals<br><em>are a feature.</em></h1><p>Rivet prefers direct, traceable implementation over clever machinery when both provide the same capability.</p></section>
+<section class="principles grid-three">
+<article><span class="number">A</span><h2>Explicit</h2><p><code>count.value++</code> makes a reactive write visible to humans, tools, and coding agents.</p></article>
+<article><span class="number">B</span><h2>Native</h2><p>DOM nodes, browser events, ES modules, and ordinary JavaScript stay first-class.</p></article>
+<article><span class="number">C</span><h2>Local</h2><p>State tracks only the observers that read it. Rendering updates bound nodes instead of diffing a virtual tree.</p></article>
+</section>
+<section class="code-feature"><div><p class="kicker">Design test</p><h2>Can an agent trace it?</h2><p>A medium-sized Rivet application should be understandable without years of ecosystem conventions or hidden compiler behaviour.</p></div><pre><code>state setter
+    ↓
+notify dependants
+    ↓
+update bound DOM node</code></pre></section>
