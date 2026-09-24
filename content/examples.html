@@ -24,3 +24,14 @@ async function load() {
         if (error.name !== "AbortError") status.value = "Error";
     }
 }</code></pre><p>Rivet does not need an async abstraction for ordinary loading, errors, cancellation, or <code>fetch</code>. Reactive cells hold UI state while JavaScript does the work.</p></section>
+<section class="example-stage"><p class="kicker">Stress example</p><h2>Editable data without an application framework</h2><pre><code>const filter = state("");
+const sortAscending = state(true);
+
+function visibleRows() {
+    return rows
+        .filter(row =&gt; row.name.value.includes(filter.value))
+        .toSorted((a, b) =&gt; sortAscending.value
+            ? a.name.value.localeCompare(b.name.value)
+            : b.name.value.localeCompare(a.name.value))
+        .map(row =&gt; key(row.id, Row(row)));
+}</code></pre><p>The stress fixture combines filtering, sorting, selection, inline editing, validation, keyed identity, and async save state. It still uses ordinary JavaScript data flow and browser events.</p></section>
