@@ -1,0 +1,13 @@
+<pre data-example-source="rivet/examples/counter.js"><code>import { html, render, state } from "rivet";
+
+export function Counter() {
+    const count = state(0);
+
+    return html`
+        &lt;button type="button" onclick=${() =&gt; count.value++}&gt;
+            Count: ${count}
+        &lt;/button&gt;
+    `;
+}
+
+document.querySelector("#app").append(render(Counter()));</code></pre>

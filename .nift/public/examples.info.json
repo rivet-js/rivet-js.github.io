@@ -15,6 +15,7 @@
   "hierarchy-fingerprint": "",
   "dependencies": [
     "content/examples.html",
+    "snippets/counter.html",
     "templates/footer.html",
     "templates/head.html",
     "templates/nav.html",

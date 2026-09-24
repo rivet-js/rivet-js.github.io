@@ -1,14 +1,5 @@
 <section class="doc-hero"><p class="kicker">Examples</p><h1>The first Rivet.</h1><p>A complete counter using the currently implemented public API.</p></section>
 <section class="example-stage">
-<pre><code>import { state, html, render } from "rivet";
-
-const count = state(0);
-const view = html`
-    &lt;button onclick=${() =&gt; count.value++}&gt;
-        Count: ${count}
-    &lt;/button&gt;
-`;
-
-document.querySelector("#app").append(render(view));</code></pre>
+@input("snippets/counter.html")
 <div class="callout"><strong>Why <code>.value</code>?</strong><p>It keeps reactive reads and writes explicit and allows Rivet to remain valid JavaScript with no mandatory compiler transform.</p></div>
 </section>
