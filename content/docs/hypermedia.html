@@ -6,3 +6,8 @@
 // result.html</code></pre><p>The JavaScript API is the engine. Declarative <code>r-*</code> attributes, when added, are only thin syntax over the same behaviour.</p></article>
 <article><h2>Still optional</h2><p>If plain <code>fetch()</code> is clearer for a feature, use it. Hypermedia support does not sit underneath Rivet's reactive core and is not required for components.</p></article>
 </section>
+<section class="docs-flow"><article><h2><code>request()</code></h2><pre><code>const { response, html } = await request("/users", {
+    method: "POST",
+    body: new FormData(form),
+    signal: controller.signal
+});</code></pre><p><code>request()</code> forwards native fetch options, reads the response as HTML text, and throws <code>RequestError</code> for non-success HTTP responses. Network and cancellation errors remain native fetch errors.</p></article></section>
