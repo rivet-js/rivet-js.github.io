@@ -12,3 +12,6 @@ const child = html`&lt;strong&gt;Rivet&lt;/strong&gt;`;
 
 html`&lt;p&gt;${icon} ${child}&lt;/p&gt;`</code></pre><p>Native DOM nodes and Rivet template results can be interpolated directly. A reactive cell or expression may replace that DOM region without rerendering the surrounding template.</p></article>
 </section>
+<section class="docs-flow">
+<article><h2>Cleanup follows the rendered subtree</h2><p>Reactive bindings and Rivet-owned event listeners are attached to the DOM nodes they serve. When Rivet replaces a rendered subtree, those resources are disposed before the old nodes are released.</p></article>
+</section>
