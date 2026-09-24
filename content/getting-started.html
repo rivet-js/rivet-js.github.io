@@ -1,7 +1,7 @@
 <section class="doc-hero"><p class="kicker">Getting started</p><h1>Start with JavaScript.<br><em>Add only what you need.</em></h1><p>Rivet's core is plain ES modules. There is no required compiler or application scaffold.</p></section>
 <section class="docs-flow">
   <article><h2>Install</h2><pre><code>npm install rivet</code></pre><p>During early development Rivet is not yet published. Work directly from the repository package.</p></article>
-  <article><h2>Import</h2><pre><code>import { state, computed, effect, html, render } from "rivet";</code></pre></article>
+  <article><h2>Import</h2><pre><code>import { state, computed, effect, html, key, mount, render } from "rivet";</code></pre></article>
   <article><h2>Create state</h2><pre><code>const count = state(0);
 count.value++;</code></pre><p>Reactive state is deliberately explicit. A state cell behaves like a small object whose <code>.value</code> is tracked.</p></article>
 </section>

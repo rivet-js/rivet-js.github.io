@@ -16,6 +16,7 @@
   "dependencies": [
     "content/examples.html",
     "snippets/counter.html",
+    "snippets/dynamic-ui.html",
     "templates/footer.html",
     "templates/head.html",
     "templates/nav.html",

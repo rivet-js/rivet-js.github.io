@@ -1,0 +1,28 @@
+<pre data-example-source="rivet/examples/dynamic-ui.js"><code>import { html, key, mount, state } from "rivet";
+
+export function DynamicList() {
+    const visible = state(true);
+    const rows = state([
+        { id: 1, label: state("HTML") },
+        { id: 2, label: state("JavaScript") },
+        { id: 3, label: state("Rivet") }
+    ]);
+
+    const reverse = () =&gt; {
+        rows.value = [...rows.value].reverse();
+    };
+
+    return html`
+        &lt;section&gt;
+            &lt;button type="button" onclick=${() =&gt; { visible.value = !visible.value; }}&gt;
+                ${() =&gt; visible.value ? "Hide" : "Show"} list
+            &lt;/button&gt;
+            &lt;button type="button" onclick=${reverse}&gt;Reverse&lt;/button&gt;
+            ${() =&gt; visible.value
+                ? html`&lt;ul&gt;${rows.value.map((row) =&gt; key(row.id, html`&lt;li&gt;${row.label}&lt;/li&gt;`))}&lt;/ul&gt;`
+                : html`&lt;p&gt;List hidden.&lt;/p&gt;`}
+        &lt;/section&gt;
+    `;
+}
+
+mount("#app", DynamicList());</code></pre>

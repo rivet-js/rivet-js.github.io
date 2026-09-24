@@ -25,3 +25,28 @@ unmount();</code></pre><p><code>mount()</code> renders into one existing element
 <section class="docs-flow">
 <article><h2>Refs stay native</h2><pre><code>html`&lt;button ref=${node =&gt; { button = node; }}&gt;Run&lt;/button&gt;`</code></pre><p>The callback receives the actual element, not a Rivet wrapper. Rivet calls the callback with <code>null</code> during disposal so stale references can be cleared.</p></article>
 </section>
+
+<section class="docs-flow">
+<article><h2>Conditions are JavaScript</h2><pre><code>html`${() =&gt; ready.value
+    ? html`&lt;p&gt;Ready&lt;/p&gt;`
+    : html`&lt;p&gt;Waiting&lt;/p&gt;`}`</code></pre><p>Rivet does not add an <code>if</code> directive. Use normal ternaries, <code>&amp;&amp;</code>, functions, and other JavaScript expressions. A function interpolation is reactive when it reads reactive cells.</p></article>
+<article><h2>Lists use arrays</h2><pre><code>html`&lt;ul&gt;${items.map(item =&gt;
+    html`&lt;li&gt;${item.name}&lt;/li&gt;`
+)}&lt;/ul&gt;`</code></pre><p>Arrays are renderable, so ordinary <code>map()</code>, <code>filter()</code>, and other JavaScript collection operations remain the list syntax.</p></article>
+</section>
+<section class="docs-flow">
+<article><h2>Preserve identity only when you need it</h2><pre><code>html`&lt;ul&gt;${() =&gt; rows.value.map(row =&gt;
+    key(row.id, html`&lt;li&gt;${row.label}&lt;/li&gt;`)
+)}&lt;/ul&gt;`</code></pre><p><code>key(id, value)</code> preserves the already-rendered DOM for a key when a reactive list reorders. Every item in a keyed list must use <code>key()</code>; duplicate keys are errors. Because an existing keyed region is preserved rather than rerendered, values that must change in-place should themselves be reactive.</p></article>
+</section>
+<section class="docs-flow">
+<article><h2>Forms stay native</h2><pre><code>html`&lt;form onsubmit=${save}&gt;
+    &lt;input name="name" .value=${name}
+        oninput=${event =&gt; { name.value = event.currentTarget.value; }}&gt;
+    &lt;input type="checkbox" .checked=${accepted}&gt;
+&lt;/form&gt;`</code></pre><p>Use normal input/change/submit events, explicit DOM property bindings, browser validation, and <code>FormData</code>. Rivet intentionally does not ship a separate forms model.</p></article>
+<article><h2>Classes and styles are attributes</h2><pre><code>html`&lt;div
+    class=${() =&gt; active.value ? "card active" : "card"}
+    style=${() =&gt; `width:${width.value}px`}
+&gt;...&lt;/div&gt;`</code></pre><p>Ordinary dynamic attributes cover the current class/style use cases, so Rivet does not add class-map or style-object helpers.</p></article>
+</section>
