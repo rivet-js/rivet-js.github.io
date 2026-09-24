@@ -21,18 +21,13 @@
     "templates/template.html"
   ],
   "reqs": [
-    "public/api.html",
-    "public/architecture.html",
     "public/assets/rivet.png",
     "public/assets/site.js",
     "public/assets/style.css",
     "public/benchmarks.html",
-    "public/components.html",
+    "public/docs/getting-started.html",
     "public/examples.html",
-    "public/getting-started.html",
     "public/index.html",
-    "public/reactivity.html",
-    "public/rendering.html",
     "public/status.html"
   ]
 }

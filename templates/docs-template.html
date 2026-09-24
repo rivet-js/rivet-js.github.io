@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+@input("templates/head.html")
+</head>
+<body>
+<div class="page-shell">
+@input("templates/nav.html")
+<div class="docs-layout">
+@input("templates/docs-nav.html")
+<main class="docs-main">
+@content
+</main>
+</div>
+@input("templates/footer.html")
+</div>
+</body>
+</html>

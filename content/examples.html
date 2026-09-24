@@ -8,3 +8,19 @@
 <h2>Dynamic composition</h2><p>Ordinary conditions and arrays combine with explicit keyed identity when DOM identity matters.</p>
 @input("snippets/dynamic-ui.html")
 </section>
+<section class="example-stage"><p class="kicker">Async interaction</p><h2>Use the platform</h2><pre><code>const status = state("Idle");
+let activeRequest;
+
+async function load() {
+    activeRequest?.abort();
+    activeRequest = new AbortController();
+    status.value = "Loading…";
+
+    try {
+        const response = await fetch("/data", { signal: activeRequest.signal });
+        if (!response.ok) throw new Error(`Request failed (${response.status})`);
+        status.value = "Ready";
+    } catch (error) {
+        if (error.name !== "AbortError") status.value = "Error";
+    }
+}</code></pre><p>Rivet does not need an async abstraction for ordinary loading, errors, cancellation, or <code>fetch</code>. Reactive cells hold UI state while JavaScript does the work.</p></section>

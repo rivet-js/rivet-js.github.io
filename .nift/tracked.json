@@ -6,19 +6,19 @@
       "template": "templates/template.html"
     },
     {
-      "name": "getting-started",
+      "name": "docs/getting-started",
       "title": "Rivet",
-      "template": "templates/template.html"
+      "template": "templates/docs-template.html"
     },
     {
-      "name": "reactivity",
+      "name": "docs/reactivity",
       "title": "Rivet",
-      "template": "templates/template.html"
+      "template": "templates/docs-template.html"
     },
     {
-      "name": "rendering",
+      "name": "docs/rendering",
       "title": "Rivet",
-      "template": "templates/template.html"
+      "template": "templates/docs-template.html"
     },
     {
       "name": "examples",
@@ -31,19 +31,19 @@
       "template": "templates/template.html"
     },
     {
-      "name": "components",
+      "name": "docs/components",
       "title": "Rivet",
-      "template": "templates/template.html"
+      "template": "templates/docs-template.html"
     },
     {
-      "name": "api",
+      "name": "docs/api",
       "title": "Rivet",
-      "template": "templates/template.html"
+      "template": "templates/docs-template.html"
     },
     {
-      "name": "architecture",
+      "name": "docs/architecture",
       "title": "Rivet",
-      "template": "templates/template.html"
+      "template": "templates/docs-template.html"
     },
     {
       "name": "benchmarks",
