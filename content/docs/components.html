@@ -50,3 +50,12 @@ const view = html`
     &lt;input ref=${node =&gt; { input = node; }}&gt;
 `;</code></pre><p>A <code>ref</code> callback receives the native element directly and receives <code>null</code> when the element is disposed. Rivet does not wrap DOM nodes in a ref object.</p></article>
 </section>
+<section class="docs-flow"><article><h2>Shared state needs no provider</h2><pre><code>export const cartCount = state(0);
+
+export function CartBadge() {
+    return html`&lt;span&gt;Cart: ${cartCount}&lt;/span&gt;`;
+}
+
+export function AddButton() {
+    return html`&lt;button onclick=${() =&gt; cartCount.value++}&gt;Add item&lt;/button&gt;`;
+}</code></pre><p>Export a state cell from an ordinary JavaScript module and import it wherever it is needed. Rivet does not add context/provider machinery until a real use case proves it necessary.</p></article></section>
