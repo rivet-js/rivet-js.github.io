@@ -22,3 +22,15 @@ const page = html`
 
 Greeting({ name: "Rivet" });</code></pre><p>Props are normal function arguments. Rivet does not create component instances, prop descriptors, or a separate props API. Reactive cells can be passed directly when the child should observe them.</p></article>
 </section>
+<section class="docs-flow">
+<article><h2>Children are just another prop</h2><pre><code>function Panel({ children }) {
+    return html`&lt;section&gt;${children}&lt;/section&gt;`;
+}
+
+Panel({
+    children: html`
+        &lt;h2&gt;Rivet&lt;/h2&gt;
+        &lt;p&gt;Ordinary composition.&lt;/p&gt;
+    `
+});</code></pre><p>Rivet does not introduce a slot language for basic composition. Pass renderable output through a normal <code>children</code> property and compose components with ordinary function calls. Multiple children can be grouped in an <code>html</code> template.</p></article>
+</section>
