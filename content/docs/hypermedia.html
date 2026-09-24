@@ -11,3 +11,9 @@
     body: new FormData(form),
     signal: controller.signal
 });</code></pre><p><code>request()</code> forwards native fetch options, reads the response as HTML text, and throws <code>RequestError</code> for non-success HTTP responses. Network and cancellation errors remain native fetch errors.</p></article></section>
+<section class="docs-flow"><article><h2>Targets and swaps</h2><pre><code>await request("/users", {
+    target: "#results",
+    swap: "inner"
+});
+
+swap("#notice", "&lt;strong&gt;Saved&lt;/strong&gt;", "outer");</code></pre><p>The first swap set is deliberately small: <code>inner</code>, <code>outer</code>, <code>before</code>, and <code>after</code>. Server HTML can be placed programmatically without a declarative layer.</p></article></section>
