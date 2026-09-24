@@ -29,3 +29,8 @@ swap("#notice", "&lt;strong&gt;Saved&lt;/strong&gt;", "outer");</code></pre><p>T
 &lt;/button&gt;</code></pre><p>Call <code>enhance()</code> on a DOM root to activate <code>r-get</code> and <code>r-post</code>. <code>r-target</code> selects the swap target, <code>r-swap</code> accepts the same four swap modes as <code>swap()</code>, and <code>r-trigger</code> may be <code>click</code>, <code>input</code>, <code>change</code>, or <code>submit</code>. Rivet intentionally does not provide a trigger mini-language.</p><pre><code>const stop = enhance(document);
 // later
 stop();</code></pre></article></section>
+
+<section class="docs-flow"><article><h2>Progressive forms</h2><pre><code>&lt;form action="/search" method="get" r-get="/search" r-target="#results"&gt;
+    &lt;input name="q"&gt;
+    &lt;button&gt;Search&lt;/button&gt;
+&lt;/form&gt;</code></pre><p>Keep normal <code>action</code>, <code>method</code>, labels, validation, and controls as the non-JavaScript fallback. Once enhanced, GET forms encode native <code>FormData</code> into the query string; POST forms send the native <code>FormData</code> body. Rivet does not introduce a forms model.</p></article></section>
