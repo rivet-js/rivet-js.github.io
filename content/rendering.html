@@ -21,3 +21,7 @@ html`&lt;p&gt;${icon} ${child}&lt;/p&gt;`</code></pre><p>Native DOM nodes and Ri
 // Later:
 unmount();</code></pre><p><code>mount()</code> renders into one existing element or selector and returns a cleanup function. Rivet does not need to own the rest of the document.</p></article>
 </section>
+
+<section class="docs-flow">
+<article><h2>Refs stay native</h2><pre><code>html`&lt;button ref=${node =&gt; { button = node; }}&gt;Run&lt;/button&gt;`</code></pre><p>The callback receives the actual element, not a Rivet wrapper. Rivet calls the callback with <code>null</code> during disposal so stale references can be cleared.</p></article>
+</section>

@@ -8,5 +8,6 @@ count.value++;</code></pre></article>
 stop();</code></pre></article>
 <article><h2><code>html`...`</code></h2><p>Creates a Rivet template result using valid JavaScript tagged-template syntax.</p></article>
 <article><h2><code>render(template)</code></h2><p>Turns a Rivet template result into a native <code>DocumentFragment</code>.</p></article>
+<article><h2><code>onCleanup(fn)</code></h2><p>Returns a renderable cleanup token. The callback runs when the containing rendered subtree is disposed.</p><pre><code>html`${onCleanup(() =&gt; clearInterval(timer))}&lt;p&gt;...&lt;/p&gt;`</code></pre></article>
 </section>
-<section class="docs-flow"><article><h2>Function components</h2><p>Any ordinary function that returns an <code>html</code> template result can be used as a component. Rivet adds no registration API.</p></article></section>
+<section class="docs-flow"><article><h2><code>ref=${callback}</code></h2><p>Calls the callback with the native DOM element during rendering and with <code>null</code> when that element is disposed.</p><pre><code>html`&lt;input ref=${node =&gt; { input = node; }}&gt;`</code></pre></article><article><h2>Function components</h2><p>Any ordinary function that returns an <code>html</code> template result can be used as a component. Rivet adds no registration API.</p></article></section>

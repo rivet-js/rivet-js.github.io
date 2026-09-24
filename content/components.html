@@ -34,3 +34,19 @@ Panel({
     `
 });</code></pre><p>Rivet does not introduce a slot language for basic composition. Pass renderable output through a normal <code>children</code> property and compose components with ordinary function calls. Multiple children can be grouped in an <code>html</code> template.</p></article>
 </section>
+
+<section class="docs-flow">
+<article><h2>Own resource cleanup explicitly</h2><pre><code>function Clock() {
+    const timer = setInterval(tick, 1000);
+
+    return html`
+        ${onCleanup(() =&gt; clearInterval(timer))}
+        &lt;p&gt;${time}&lt;/p&gt;
+    `;
+}</code></pre><p><code>onCleanup(fn)</code> ties an arbitrary resource to the lifetime of the rendered subtree. It runs when that subtree is replaced or unmounted. Use it only for resources ordinary DOM cleanup does not already cover.</p></article>
+<article><h2>Use native DOM refs when necessary</h2><pre><code>let input;
+
+const view = html`
+    &lt;input ref=${node =&gt; { input = node; }}&gt;
+`;</code></pre><p>A <code>ref</code> callback receives the native element directly and receives <code>null</code> when the element is disposed. Rivet does not wrap DOM nodes in a ref object.</p></article>
+</section>
