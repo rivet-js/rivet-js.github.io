@@ -31,6 +31,11 @@
       "template": "templates/template.html"
     },
     {
+      "name": "components",
+      "title": "Rivet",
+      "template": "templates/template.html"
+    },
+    {
       "name": "api",
       "title": "Rivet",
       "template": "templates/template.html"

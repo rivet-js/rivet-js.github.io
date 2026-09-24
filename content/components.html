@@ -1,0 +1,17 @@
+<section class="doc-hero"><p class="kicker">Components</p><h1>Functions.<br><em>That's the model.</em></h1><p>A Rivet component is an ordinary JavaScript function that returns a Rivet <code>html</code> result. There is no component base class, registration step, hook ordering rule, or special invocation syntax.</p></section>
+<section class="docs-flow">
+<article><h2>Define a component</h2><pre><code>export function Counter() {
+    const count = state(0);
+
+    return html`
+        &lt;button onclick=${() =&gt; count.value++}&gt;
+            Count: ${count}
+        &lt;/button&gt;
+    `;
+}</code></pre></article>
+<article><h2>Use it like a function</h2><pre><code>mount("#app", Counter());
+
+const page = html`
+    &lt;main&gt;${Counter()}&lt;/main&gt;
+`;</code></pre><p>Calling a component returns renderable output. Ordinary JavaScript remains the composition mechanism.</p></article>
+</section>
