@@ -3,7 +3,7 @@
 <article><h2>Why it exists</h2><p>For fragment loading, normal form submissions, pagination, and inline edits, request + target + swap is repetitive boilerplate in vanilla JavaScript. Rivet will make that common path concise without taking ownership of routing, history, polling, confirmation logic, or application state.</p></article>
 <article><h2>Programmatic first</h2><pre><code>const result = await request("/users");
 // result.response
-// result.html</code></pre><p>The JavaScript API is the engine. Declarative <code>r-*</code> attributes, when added, are only thin syntax over the same behaviour.</p></article>
+// result.html</code></pre><p>The JavaScript API is the engine. Declarative <code>r-*</code> attributes are thin syntax over the same behaviour.</p></article>
 <article><h2>Still optional</h2><p>If plain <code>fetch()</code> is clearer for a feature, use it. Hypermedia support does not sit underneath Rivet's reactive core and is not required for components.</p></article>
 </section>
 <section class="docs-flow"><article><h2><code>request()</code></h2><pre><code>const { response, html } = await request("/users", {
@@ -20,3 +20,12 @@ swap("#notice", "&lt;strong&gt;Saved&lt;/strong&gt;", "outer");</code></pre><p>T
 <section class="docs-flow"><article><h2>Native lifecycle events</h2><pre><code>results.addEventListener("rivet:after-swap", (event) =&gt; {
     console.log(event.detail.nodes);
 });</code></pre><p>Rivet emits native bubbling <code>CustomEvent</code>s: <code>rivet:before-request</code>, <code>rivet:after-request</code>, <code>rivet:request-error</code>, <code>rivet:before-swap</code>, and <code>rivet:after-swap</code>. There is no plugin-specific event bus.</p></article></section>
+
+<section class="docs-flow"><article><h2>Declarative requests</h2><pre><code>&lt;button
+    r-get="/users"
+    r-target="#results"
+    r-swap="inner"&gt;
+    Load users
+&lt;/button&gt;</code></pre><p>Call <code>enhance()</code> on a DOM root to activate <code>r-get</code> and <code>r-post</code>. <code>r-target</code> selects the swap target, <code>r-swap</code> accepts the same four swap modes as <code>swap()</code>, and <code>r-trigger</code> may be <code>click</code>, <code>input</code>, <code>change</code>, or <code>submit</code>. Rivet intentionally does not provide a trigger mini-language.</p><pre><code>const stop = enhance(document);
+// later
+stop();</code></pre></article></section>
