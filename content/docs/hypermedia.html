@@ -34,3 +34,5 @@ stop();</code></pre></article></section>
     &lt;input name="q"&gt;
     &lt;button&gt;Search&lt;/button&gt;
 &lt;/form&gt;</code></pre><p>Keep normal <code>action</code>, <code>method</code>, labels, validation, and controls as the non-JavaScript fallback. Once enhanced, GET forms encode native <code>FormData</code> into the query string; POST forms send the native <code>FormData</code> body. Rivet does not introduce a forms model.</p></article></section>
+
+<section class="docs-flow"><article><h2>History stays browser-owned</h2><p>Rivet deliberately does not ship partial-navigation/history attributes yet. Correct navigation immediately raises policy for <code>pushState</code>, <code>popstate</code>, scroll restoration, focus, titles, redirects, failures, and caching. Use ordinary links, the native History API, or a dedicated router when navigation is genuinely application architecture.</p></article></section>
