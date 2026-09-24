@@ -1,0 +1,8 @@
+<section class="doc-hero"><p class="kicker">Security</p><h1>Data stays data.<br><em>Raw HTML stays explicit.</em></h1><p>Rivet keeps ordinary interpolation separate from trusted HTML parsing so the security boundary is visible in source.</p></section>
+<section class="docs-flow">
+<article><h2>Safe interpolation</h2><p>Interpolated strings in template content become text nodes; interpolated attributes are assigned as attribute values. They are not reparsed as template markup.</p><pre><code>const name = state('&lt;img src=x onerror=alert(1)&gt;');
+html`&lt;p&gt;${name}&lt;/p&gt;`; // text, not an image</code></pre><p>Rivet rejects <code>.innerHTML</code>, <code>.outerHTML</code>, and <code>.srcdoc</code> property bindings because they turn strings back into parser input.</p></article>
+<article><h2>Trusted HTML sinks</h2><p>The static markup written inside <code>html`...`</code> is developer-authored application source and is trusted. Hypermedia <code>swap()</code> also deliberately parses HTML, so server-returned swap content must be treated as trusted application output. Rivet does not pretend to be an HTML sanitizer.</p></article>
+<article><h2>Requests and URLs</h2><p><code>request()</code> keeps native <code>fetch</code> semantics. Rivet does not replace server authorization, CSRF protection, CORS policy, URL validation, or redirect policy. Declarative <code>r-get</code>/<code>r-post</code> map onto the same request engine.</p></article>
+<article><h2>CSP-friendly events</h2><p>Dynamic event handlers use <code>addEventListener</code> rather than generated inline JavaScript. Applications can therefore use a restrictive Content Security Policy without Rivet requiring <code>unsafe-eval</code>.</p></article>
+</section>

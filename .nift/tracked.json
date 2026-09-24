@@ -51,6 +51,11 @@
       "template": "templates/docs-template.html"
     },
     {
+      "name": "docs/security",
+      "title": "Rivet",
+      "template": "templates/docs-template.html"
+    },
+    {
       "name": "benchmarks",
       "title": "Rivet",
       "template": "templates/template.html"

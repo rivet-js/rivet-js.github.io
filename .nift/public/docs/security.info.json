@@ -1,0 +1,41 @@
+{
+  "name": "docs/security",
+  "title": "Rivet",
+  "template": "templates/docs-template.html",
+  "content": "content/docs/security.html",
+  "output": "public/docs/security.html",
+  "minify": false,
+  "minify-version": 0,
+  "pagination": false,
+  "pagination-items-per-page": 0,
+  "pagination-template": "",
+  "pagination-separator": "",
+  "pagination-pages": 0,
+  "project-fingerprint": "",
+  "hierarchy-fingerprint": "",
+  "dependencies": [
+    "content/docs/security.html",
+    "templates/docs-nav.html",
+    "templates/docs-template.html",
+    "templates/footer.html",
+    "templates/head.html",
+    "templates/nav.html"
+  ],
+  "reqs": [
+    "public/assets/rivet.png",
+    "public/assets/site.js",
+    "public/assets/style.css",
+    "public/benchmarks.html",
+    "public/docs/api.html",
+    "public/docs/architecture.html",
+    "public/docs/components.html",
+    "public/docs/getting-started.html",
+    "public/docs/hypermedia.html",
+    "public/docs/reactivity.html",
+    "public/docs/rendering.html",
+    "public/docs/security.html",
+    "public/examples.html",
+    "public/index.html",
+    "public/status.html"
+  ]
+}
