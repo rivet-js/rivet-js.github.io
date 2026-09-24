@@ -17,3 +17,6 @@
 });
 
 swap("#notice", "&lt;strong&gt;Saved&lt;/strong&gt;", "outer");</code></pre><p>The first swap set is deliberately small: <code>inner</code>, <code>outer</code>, <code>before</code>, and <code>after</code>. Server HTML can be placed programmatically without a declarative layer.</p></article></section>
+<section class="docs-flow"><article><h2>Native lifecycle events</h2><pre><code>results.addEventListener("rivet:after-swap", (event) =&gt; {
+    console.log(event.detail.nodes);
+});</code></pre><p>Rivet emits native bubbling <code>CustomEvent</code>s: <code>rivet:before-request</code>, <code>rivet:after-request</code>, <code>rivet:request-error</code>, <code>rivet:before-swap</code>, and <code>rivet:after-swap</code>. There is no plugin-specific event bus.</p></article></section>
