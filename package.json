@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "docs:sync": "node scripts/sync-examples.mjs",
-    "docs:check": "node scripts/sync-examples.mjs --check"
+    "docs:check": "node scripts/sync-examples.mjs --check",
+    "docs:audit": "node scripts/audit-docs.mjs"
   }
 }

@@ -67,8 +67,8 @@
     },
     {
       "name": "docs/accessibility",
-      "title": "accessibility",
-      "template": "templates/template.html"
+      "title": "Rivet",
+      "template": "templates/docs-template.html"
     }
   ]
 }

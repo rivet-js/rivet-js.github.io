@@ -1,7 +1,7 @@
 {
   "name": "docs/accessibility",
-  "title": "accessibility",
-  "template": "templates/template.html",
+  "title": "Rivet",
+  "template": "templates/docs-template.html",
   "content": "content/docs/accessibility.html",
   "output": "public/docs/accessibility.html",
   "minify": false,
@@ -15,17 +15,26 @@
   "hierarchy-fingerprint": "",
   "dependencies": [
     "content/docs/accessibility.html",
+    "templates/docs-nav.html",
+    "templates/docs-template.html",
     "templates/footer.html",
     "templates/head.html",
-    "templates/nav.html",
-    "templates/template.html"
+    "templates/nav.html"
   ],
   "reqs": [
     "public/assets/rivet.png",
     "public/assets/site.js",
     "public/assets/style.css",
     "public/benchmarks.html",
+    "public/docs/accessibility.html",
+    "public/docs/api.html",
+    "public/docs/architecture.html",
+    "public/docs/components.html",
     "public/docs/getting-started.html",
+    "public/docs/hypermedia.html",
+    "public/docs/reactivity.html",
+    "public/docs/rendering.html",
+    "public/docs/security.html",
     "public/examples.html",
     "public/index.html",
     "public/status.html"
