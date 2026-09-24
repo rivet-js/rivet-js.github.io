@@ -35,3 +35,16 @@ function visibleRows() {
             : b.name.value.localeCompare(a.name.value))
         .map(row =&gt; key(row.id, Row(row)));
 }</code></pre><p>The stress fixture combines filtering, sorting, selection, inline editing, validation, keyed identity, and async save state. It still uses ordinary JavaScript data flow and browser events.</p></section>
+
+<section class="example-stage"><p class="kicker">Hypermedia</p><h2>Server HTML without an SPA</h2><pre><code>&lt;form action="/search" method="get"
+      r-get="/search"
+      r-target="#results"&gt;
+    &lt;input name="q"&gt;
+    &lt;button&gt;Search&lt;/button&gt;
+&lt;/form&gt;
+&lt;div id="results"&gt;&lt;/div&gt;
+
+&lt;script type="module"&gt;
+    import { enhance } from "rivet";
+    enhance(document);
+&lt;/script&gt;</code></pre><p>The form remains a normal form without JavaScript. With Rivet enabled, it requests server-rendered HTML and swaps only the target.</p></section>
