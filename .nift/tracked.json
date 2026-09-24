@@ -21,6 +21,11 @@
       "template": "templates/docs-template.html"
     },
     {
+      "name": "docs/hypermedia",
+      "title": "Rivet",
+      "template": "templates/docs-template.html"
+    },
+    {
       "name": "examples",
       "title": "Rivet",
       "template": "templates/template.html"

@@ -30,6 +30,7 @@
     "public/docs/architecture.html",
     "public/docs/components.html",
     "public/docs/getting-started.html",
+    "public/docs/hypermedia.html",
     "public/docs/reactivity.html",
     "public/docs/rendering.html",
     "public/examples.html",

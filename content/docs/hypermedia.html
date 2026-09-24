@@ -1,0 +1,8 @@
+<section class="doc-hero"><p class="kicker">Hypermedia</p><h1>Server HTML.<br><em>Explicitly placed.</em></h1><p>Rivet's optional hypermedia layer is intentionally narrow: native fetch semantics, HTML responses, explicit targets, explicit swaps, and native lifecycle events.</p></section>
+<section class="docs-flow">
+<article><h2>Why it exists</h2><p>For fragment loading, normal form submissions, pagination, and inline edits, request + target + swap is repetitive boilerplate in vanilla JavaScript. Rivet will make that common path concise without taking ownership of routing, history, polling, confirmation logic, or application state.</p></article>
+<article><h2>Programmatic first</h2><pre><code>const result = await request("/users");
+// result.response
+// result.html</code></pre><p>The JavaScript API is the engine. Declarative <code>r-*</code> attributes, when added, are only thin syntax over the same behaviour.</p></article>
+<article><h2>Still optional</h2><p>If plain <code>fetch()</code> is clearer for a feature, use it. Hypermedia support does not sit underneath Rivet's reactive core and is not required for components.</p></article>
+</section>
