@@ -1,4 +1,5 @@
-<section class="doc-hero"><p class="kicker">API reference</p><h1>The public surface,<br><em>kept intentionally small.</em></h1><p>This reference lists APIs implemented in Rivet today. Planned APIs are not presented as available.</p></section>
+<section class="doc-hero"><p class="kicker">API reference</p><h1>The public surface,<br><em>kept intentionally small.</em></h1><p>This reference lists APIs implemented in Rivet today. Planned APIs are not presented as available.</p><article><h2><code>mount(target, template)</code></h2><p>Replaces the target element's children with rendered Rivet output and returns an unmount function that releases Rivet-owned resources.</p></article>
+</section>
 <section class="docs-flow">
 <article><h2><code>state(initial)</code></h2><p>Creates a mutable reactive cell. Read and write through <code>.value</code>.</p><pre><code>const count = state(0);
 count.value++;</code></pre></article>

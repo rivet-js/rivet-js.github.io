@@ -15,3 +15,9 @@ html`&lt;p&gt;${icon} ${child}&lt;/p&gt;`</code></pre><p>Native DOM nodes and Ri
 <section class="docs-flow">
 <article><h2>Cleanup follows the rendered subtree</h2><p>Reactive bindings and Rivet-owned event listeners are attached to the DOM nodes they serve. When Rivet replaces a rendered subtree, those resources are disposed before the old nodes are released.</p></article>
 </section>
+<section class="docs-flow">
+<article><h2><code>mount(target, template)</code></h2><pre><code>const unmount = mount("#counter", Counter());
+
+// Later:
+unmount();</code></pre><p><code>mount()</code> renders into one existing element or selector and returns a cleanup function. Rivet does not need to own the rest of the document.</p></article>
+</section>
