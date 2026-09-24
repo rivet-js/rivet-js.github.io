@@ -15,3 +15,10 @@ const page = html`
     &lt;main&gt;${Counter()}&lt;/main&gt;
 `;</code></pre><p>Calling a component returns renderable output. Ordinary JavaScript remains the composition mechanism.</p></article>
 </section>
+<section class="docs-flow">
+<article><h2>Props are plain objects</h2><pre><code>function Greeting({ name, punctuation = "!" }) {
+    return html`&lt;p&gt;Hello ${name}${punctuation}&lt;/p&gt;`;
+}
+
+Greeting({ name: "Rivet" });</code></pre><p>Props are normal function arguments. Rivet does not create component instances, prop descriptors, or a separate props API. Reactive cells can be passed directly when the child should observe them.</p></article>
+</section>
