@@ -9,3 +9,8 @@
 notify dependants
     ↓
 update bound DOM node</code></pre></section>
+<section class="docs-flow"><article><h2>Native interoperability</h2><pre><code>const node = document.createElement("strong");
+node.textContent = "plain DOM";
+
+mount("#widget", html`&lt;p&gt;Rivet + ${node}&lt;/p&gt;`);
+node.addEventListener("click", handleClick);</code></pre><p>Rivet deliberately does not wrap DOM nodes, events, fetch, forms, or platform APIs. A mounted widget owns the target you give it, not the surrounding document.</p></article></section>
