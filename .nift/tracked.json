@@ -1,0 +1,11 @@
+{
+  "tracked": [
+    {"name": "/", "title": "Rivet", "template": "templates/template.html"},
+    {"name": "getting-started", "title": "Rivet", "template": "templates/template.html"},
+    {"name": "reactivity", "title": "Rivet", "template": "templates/template.html"},
+    {"name": "rendering", "title": "Rivet", "template": "templates/template.html"},
+    {"name": "examples", "title": "Rivet", "template": "templates/template.html"},
+    {"name": "status", "title": "Rivet", "template": "templates/template.html"},
+    {"name": "404", "title": "Rivet", "template": "templates/error.html"}
+  ]
+}

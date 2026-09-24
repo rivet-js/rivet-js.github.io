@@ -1,0 +1,25 @@
+<section class="hero">
+  <div class="eyebrow"><span class="dot"></span> tiny · explicit · HTML-first</div>
+  <h1>Reactivity that<br><em>rivets onto HTML.</em></h1>
+  <p class="lede">Rivet is a tiny, agent-friendly JavaScript framework for adding reactivity and hypermedia to ordinary HTML.</p>
+  <div class="actions"><a class="button primary" href="@path('getting-started')">Get started</a><a class="button" href="@path('examples')">See the counter</a></div>
+</section>
+<section class="principles grid-three">
+  <article><span class="number">01</span><h2>Normal JavaScript first</h2><p>Use browser APIs and ordinary JavaScript until a small Rivet primitive makes the code clearer.</p></article>
+  <article><span class="number">02</span><h2>No page takeover</h2><p>Render a component where you need one. Rivet does not require an SPA, router, compiler, or application shell.</p></article>
+  <article><span class="number">03</span><h2>Built for AI-DX</h2><p>Explicit state, small modules, predictable behaviour, and code an agent can trace without framework folklore.</p></article>
+</section>
+<section class="code-feature">
+  <div><p class="kicker">Current milestone</p><h2>A reactive counter, without compiler magic.</h2><p>The public API already includes <code>state()</code>, <code>computed()</code>, <code>effect()</code>, <code>html</code>, and <code>render()</code>.</p></div>
+  <pre><code>import { state, html } from "rivet";
+
+export function Counter() {
+    const count = state(0);
+
+    return html`
+        &lt;button onclick=${() =&gt; count.value++}&gt;
+            Count: ${count}
+        &lt;/button&gt;
+    `;
+}</code></pre>
+</section>

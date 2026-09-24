@@ -1,0 +1,21 @@
+<header class="site-header">
+  <a class="brand" href="@path('/')" aria-label="Rivet home"><img src="@path('public/assets/rivet.png')" alt=""><span>Rivet</span></a>
+  <nav class="desktop-nav" aria-label="Primary">
+    <a href="@path('getting-started')">Get started</a>
+    <a href="@path('reactivity')">Reactivity</a>
+    <a href="@path('rendering')">Rendering</a>
+    <a href="@path('examples')">Examples</a>
+    <a href="@path('status')">Status</a>
+  </nav>
+  <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
+</header>
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <nav aria-label="Mobile">
+    <a href="@path('/')">Home</a>
+    <a href="@path('getting-started')">Get started</a>
+    <a href="@path('reactivity')">Reactivity</a>
+    <a href="@path('rendering')">Rendering</a>
+    <a href="@path('examples')">Examples</a>
+    <a href="@path('status')">Status</a>
+  </nav>
+</div>

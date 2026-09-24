@@ -1,0 +1,34 @@
+{
+  "name": "reactivity",
+  "title": "Rivet",
+  "template": "templates/template.html",
+  "content": "content/reactivity.html",
+  "output": "public/reactivity.html",
+  "minify": false,
+  "minify-version": 0,
+  "pagination": false,
+  "pagination-items-per-page": 0,
+  "pagination-template": "",
+  "pagination-separator": "",
+  "pagination-pages": 0,
+  "project-fingerprint": "",
+  "hierarchy-fingerprint": "",
+  "dependencies": [
+    "content/reactivity.html",
+    "templates/footer.html",
+    "templates/head.html",
+    "templates/nav.html",
+    "templates/template.html"
+  ],
+  "reqs": [
+    "public/assets/rivet.png",
+    "public/assets/site.js",
+    "public/assets/style.css",
+    "public/examples.html",
+    "public/getting-started.html",
+    "public/index.html",
+    "public/reactivity.html",
+    "public/rendering.html",
+    "public/status.html"
+  ]
+}

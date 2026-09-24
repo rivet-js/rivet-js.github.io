@@ -1,0 +1,13 @@
+<section class="doc-hero"><p class="kicker">Reactivity</p><h1>Three primitives.<br><em>No hidden lifecycle.</em></h1><p>Rivet's reactive core currently consists of <code>state()</code>, <code>computed()</code>, and <code>effect()</code>.</p></section>
+<section class="docs-flow">
+<article><h2><code>state(initial)</code></h2><pre><code>const count = state(0);
+count.value = 4;
+count.value++;</code></pre><p>Reads are tracked while an observer is active. Writes notify current dependants synchronously.</p></article>
+<article><h2><code>computed(fn)</code></h2><pre><code>const doubled = computed(() =&gt; count.value * 2);
+console.log(doubled.value);</code></pre><p>Computed cells are lazy and cached until a dependency invalidates them.</p></article>
+<article><h2><code>effect(fn)</code></h2><pre><code>const stop = effect(() =&gt; {
+    console.log(count.value);
+});
+
+stop();</code></pre><p>An effect tracks the state it reads and returns a disposer. Dependencies are recalculated each run.</p></article>
+</section>
